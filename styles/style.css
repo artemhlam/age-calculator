@@ -1,0 +1,242 @@
+@import url('fonts.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 1;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: 'Poppins-Regular', sans-serif;
+  background-color: var(--off-white);
+  padding: 0 20px;
+
+  color: var(--off-black);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.calculator {
+  padding: 2rem;
+  border-radius: 24px;
+  border-bottom-right-radius: 64px;
+  max-width: 550px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.calculator__form {
+  position: relative;
+}
+
+.calculator__form-inputs {
+  display: flex;
+}
+
+.calculator__form-submit {
+  margin: 8px 0;
+  position: relative;
+  display: block;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--purple);
+  height: 4rem;
+  width: 4rem;
+  margin-left: auto;
+  z-index: 999;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+.calculator__form-submit:hover {
+  background-color: var(--off-black);
+}
+.calculator__form-submit > img {
+  width: 1.9rem;
+}
+
+.calculator__form-footer {
+  position: relative;
+}
+
+.calculator__form-divider {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  background-color: var(--light-grey);
+  bottom: 50%;
+  z-index: 998;
+}
+
+.calculator__form-group {
+  display: flex;
+  flex-direction: column;
+  width: 110px;
+}
+.calculator__form-group:not(:last-child) {
+  margin-right: 20px;
+}
+
+.calculator__form-input {
+  border: 1px solid var(--light-grey);
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 1.5rem;
+  font-family: 'Poppins-Bold';
+  color: var(--off-black);
+
+  transition: 0.2s;
+}
+.calculator__form-input--correct {
+  border-color: green;
+}
+.calculator__form-input--error {
+  border-color: red;
+}
+.calculator__form-input:focus {
+  outline: none;
+}
+
+.calculator__form-label {
+  color: var(--smokey-grey);
+  text-transform: uppercase;
+  font-family: 'Poppins-Bold';
+  font-size: 10px;
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+}
+
+.calculator__form-label--error {
+  color: red;
+}
+.calculator__form-label--correct {
+  color: green;
+}
+
+.calculator__form-error {
+  margin-top: 8px;
+  font-size: 0.7rem;
+  font-family: 'Poppins-Italic';
+  color: red;
+}
+
+.calculator__results-item {
+  font-size: 56px;
+  font-family: 'Poppins-ExtraBoldItalic';
+}
+.calculator__results-item span {
+  color: var(--purple);
+}
+
+
+.calculator__form-group--error .calculator__form-label {
+  color: red;
+}
+.calculator__form-group--error .calculator__form-input {
+  border-color: red;
+}
+
+.calculator__form-group--correct .calculator__form-label {
+  color: green;
+}
+.calculator__form-group--correct .calculator__form-input {
+  border-color: green;
+}
+
+.calculator__form-group--focus .calculator__form-label {
+  color: var(--purple) !important;
+}
+.calculator__form-group--focus .calculator__form-input {
+  border-color: var(--purple) !important;
+}
+
+@media screen and (max-width: 520px) {
+  .calculator__form-submit {
+    margin-top: 30px;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+  .calculator__form-inputs {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .calculator__form-input {
+    font-size: 1.5rem;
+  }
+  .calculator__form-group {
+    max-width: 90px;
+  }
+  .calculator__form-group:not(:last-child) {
+    margin-right: 14px;
+  }
+  .calculator__results-item {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .calculator__results-item {
+    font-size: 40px;
+  }
+  .calculator__form-input {
+    font-size: 1.2rem;
+  }
+  .calculator__form-group {
+    max-width: 75px;
+  }
+  .calculator__form-group:not(:last-child) {
+    margin-right: 10px;
+  }
+  .calculator__form-submit {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .calculator__form-submit > img {
+    width: 1.5rem;
+  }
+}
+
+
+/* Remove Arrows/Spinners from inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Remove the blue highlight */
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}

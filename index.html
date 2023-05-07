@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Age calculator app</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+  <main class="main">
+    <div class="calculator">
+      <form class="calculator__form" action="index.html">
+        <div class="calculator__form-inputs">
+          <div class="calculator__form-group">
+            <label class="calculator__form-label" for="day-input">Day</label>
+            <input class="calculator__form-input" type="number" size="1" maxlength="2" placeholder="DD" name="day-input" id="day-input">
+            <div class="calculator__form-error"></div>
+          </div>
+          <div class="calculator__form-group">
+            <label class="calculator__form-label" for="month-input">Month</label>
+            <input class="calculator__form-input" type="number" size="1" maxlength="2" placeholder="MM" name="month-input" id="month-input">
+            <div class="calculator__form-error"></div>
+          </div>
+          <div class="calculator__form-group">
+            <label class="calculator__form-label" for="year-input">Year</label>
+            <input class="calculator__form-input" type="number" size="1" maxlength="4" placeholder="YYYY" name="year-input" id="year-input">
+            <div class="calculator__form-error"></div>
+          </div>
+        </div>
+        <div class="calculator__form-footer">
+          <div class="calculator__form-divider"></div>
+          <button class="calculator__form-submit">
+            <img src="./assets/images/icon-arrow.svg" alt="row icon">
+          </button>
+        </div>
+        
+      </form>
+  
+      <div class="calculator__results">
+        <div class="calculator__results-item">
+          <span class="calculator__results-years">--</span> years
+        </div>
+        <div class="calculator__results-item">
+          <span class="calculator__results-months">--</span> months
+        </div>
+        <div class="calculator__results-item">
+          <span class="calculator__results-days">--</span> days
+        </div>
+      </div>
+    </div>
+  </main> 
+</body>
+
+<script src="./scripts/script.js"></script>
+</html>
