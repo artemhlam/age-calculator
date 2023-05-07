@@ -9,7 +9,7 @@ inputs.forEach(input => {
   // Add max-length to all inputs type number
   input.oninput = function() {
     if(this.value.length > this.maxLength) {
-      this.value = this.value.slice(0, this.maxLength);
+      this.value = this.value.slice(0, this.dataset.maxLength);
     }
   }
 
